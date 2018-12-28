@@ -11,4 +11,5 @@ import java.util.List;
  * @Date 2018/7/11.
  */
 public interface UserService extends BaseService<User,Integer>{
+    User findById();
 }

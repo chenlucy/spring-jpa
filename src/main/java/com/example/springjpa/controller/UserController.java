@@ -3,6 +3,7 @@ package com.example.springjpa.controller;
 import com.example.springjpa.compoment.Result;
 import com.example.springjpa.entity.User;
 import com.example.springjpa.server.UserService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +27,9 @@ public class UserController {
     @RequestMapping(value = "getById")
     public User getById(Integer id) {
         return userService.getById(id);
+    }
+    @GetMapping("/findById")
+    public User findById(){
+        return userService.findById();
     }
 }

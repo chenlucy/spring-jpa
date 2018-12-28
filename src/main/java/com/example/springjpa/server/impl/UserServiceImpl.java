@@ -20,4 +20,8 @@ import java.util.List;
 public class UserServiceImpl extends BaseServiceImpl<User,Integer> implements UserService {
     @Resource
     private UserDao userDao;
+
+    public User findById(){
+        return userDao.getUser(1);
+    }
 }

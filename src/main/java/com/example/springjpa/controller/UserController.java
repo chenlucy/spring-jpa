@@ -32,4 +32,8 @@ public class UserController {
     public User findById(){
         return userService.findById();
     }
+    @GetMapping("/findByName")
+    public User findByName(){
+        return userService.findById();
+    }
 }

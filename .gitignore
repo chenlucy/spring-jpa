@@ -15,7 +15,8 @@
 *.iws
 *.iml
 *.ipr
-
+test
+hello.txt
 
 ### NetBeans ###
 /nbproject/private/

@@ -12,4 +12,8 @@ import java.util.List;
  */
 public interface UserService extends BaseService<User,Integer>{
     User findById();
+
+
+
+
 }

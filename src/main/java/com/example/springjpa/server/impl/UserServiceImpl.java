@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,5 +24,21 @@ public class UserServiceImpl extends BaseServiceImpl<User,Integer> implements Us
 
     public User findById(){
         return userDao.getUser(1);
+    }
+
+    @Override
+    public List<User> findPage(Integer pageNum, Integer pageSize) {
+
+        List<User> list = new ArrayList<>();
+
+        return findList(list,pageNum,pageSize);
+    }
+    public List<User> findList(List<User> list,Integer pageNum, Integer pageSize) {
+        List<User> list1 = userDao.findPage(pageNum,pageSize);
+        list.addAll(list1);
+        if(list1.size()==pageSize){
+            this.findList(list,pageNum+pageSize,pageSize);
+        }
+        return list;
     }
 }

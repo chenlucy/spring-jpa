@@ -31,4 +31,23 @@ public class User{
     @Column(name = "is_enable")
     private Boolean isEnable;
 
+    public User(Integer id,String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                ", mobile='" + mobile + '\'' +
+                ", remark='" + remark + '\'' +
+                ", isEnable=" + isEnable +
+                '}';
+    }
 }

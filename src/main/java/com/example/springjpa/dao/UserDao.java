@@ -5,6 +5,8 @@ import com.example.springjpa.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @Describe
  * @Author Corey
@@ -17,4 +19,6 @@ public interface UserDao extends BaseDao<User, Integer> {
 
     @Query(value = "select * from user where id=?1", nativeQuery = true)
     User getUser(Integer id);
+    @Query(value = "select * from user limit ?1,?2", nativeQuery = true)
+    List<User> findPage(Integer pageNum, Integer pageSize);
 }

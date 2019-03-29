@@ -12,4 +12,5 @@ import java.util.List;
  */
 public interface UserService extends BaseService<User,Integer>{
     User findById();
+    List<User> findPage(Integer pageNum,Integer pageSize);
 }
